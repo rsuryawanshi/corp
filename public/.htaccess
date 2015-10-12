@@ -1,0 +1,12 @@
+DirectoryIndex index.php
+#Options -Indexes +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?rt=$1 [L,QSA] 
+
+#Header unset ETag
+FileETag none
+#php_value date.timezone Asia/Kolkata
